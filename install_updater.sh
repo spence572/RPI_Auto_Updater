@@ -1,34 +1,33 @@
-#!/bin/bash																		#
-#===============================================================================#
-# HEADER																		#
-#===============================================================================#
-# SCRIPT:		NAME_of_SCRIPT													#
-# AUTHOR:		Paul Spencer based on 											#
-# http://www.instructables.com/id/Raspberry-Pi-Auto-Update/ by JaredT22			#
-# DATE:			13/05/2017														#
-# COPYRIGHT:	Copyright (c) Paul Spencer		 								#
-# LICENCE:		MIT License														#
-#																				#
-# PURPOSE: File to configure the auto update for the RPI.						#
-#																				#
-#===============================================================================#
-# HISTORY																		#
-#===============================================================================#
-# Date			Author	Description												#
-# 2017/05/13	PDS		Script creation 										#
-# 2017/05/16	PDS		Header added											#
+#!/bin/bash
+##########
+# HEADER
+##########
+# SCRIPT:		NAME_of_SCRIPT
+# AUTHOR:		Paul Spencer based on
+# http://www.instructables.com/id/Raspberry-Pi-Auto-Update/ by JaredT22
+# DATE:			13/05/2017
+# COPYRIGHT:	Copyright (c) Paul Spencer
+# LICENCE:		MIT License
+#
+# PURPOSE: File to configure the auto update for the RPI.
+#
+##########
+# HISTORY
+##########
+# Date			Author	Description
+# 2017/05/13	PDS		Script creation
+# 2017/05/16	PDS		Header added
 # 2017/08/28	PDS		Added dist-upgrade
-# 																				#
-#===============================================================================#
-# END_OF_HEADER																	#
-#===============================================================================#
-
-
-
-#===============================================================================#
-# USAGE																			#
-#===============================================================================#
-
+#
+##########
+# END_OF_HEADER
+##########
+#
+#
+##########
+# USAGE
+##########
+#
 USAGE="Looks like you have already ran this script. Please rm -r updater and the cron entry then rerun"
 
 if [[ -d updater ]]
@@ -39,9 +38,9 @@ fi
 
 
 
-#===============================================================================#
-# SCRIPT																		#
-#===============================================================================#
+##########
+# SCRIPT
+##########
 cd ~
 mkdir updater
 mkdir updater/logs
