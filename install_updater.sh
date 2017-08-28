@@ -17,6 +17,7 @@
 # Date			Author	Description												#
 # 2017/05/13	PDS		Script creation 										#
 # 2017/05/16	PDS		Header added											#
+# 2017/08/28	PDS		Added dist-upgrade
 # 																				#
 #===============================================================================#
 # END_OF_HEADER																	#
@@ -53,6 +54,7 @@ touch update.sh
 
 echo "#!/bin/sh" >> update.sh
 echo "sudo apt-get update && sudo apt-get upgrade -y" >> update.sh
+echo "sudo apt-get -y dist-upgrade" >> update.sh
 echo "sudo rpi-update" >> update.sh
 echo "sudo apt-get autoremove" >> update.sh
 echo "sudo apt-get autoclean" >> update.sh
