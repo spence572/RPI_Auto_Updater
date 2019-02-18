@@ -59,6 +59,12 @@ echo "sudo apt-get autoremove" >> update.sh
 echo "sudo apt-get autoclean" >> update.sh
 echo "sudo reboot" >> update.sh
 
+#Check if motioneye is installed, if so update the package
+if [[ `ps -ef | grep motioneye | grep -v grep` ]]
+then
+    echo "pip install motioneye --upgrade" >> update.sh
+    echo "systemctl restart motioneye" >> update.sh
+fi
 #
 chmod +x update.sh
 
