@@ -22,18 +22,11 @@
 ##########
 # END_OF_HEADER
 ##########
-#
-#
-##########
-# USAGE
-##########
-#
-USAGE="Looks like you have already ran this script. Please rm -r updater and the cron entry then rerun"
 
-if [[ -d updater ]]
+#Check's if you have ran this before. If so then it will clean up the old script
+if [[ -d ~/updater ]]
 	then
-	echo $USAGE
-    exit 1
+	    rm ~/updater/update.sh
 fi
 
 
@@ -42,9 +35,7 @@ fi
 # SCRIPT
 ##########
 cd ~
-mkdir updater
-mkdir updater/logs
-touch updater/logs/cronlog
+mkdir -p updater/logs
 chmod -R 777 updater
 cd updater
 
@@ -68,4 +59,5 @@ fi
 #
 chmod +x update.sh
 
-(crontab -l 2>/dev/null; echo "0 0 * * SAT /home/pi/updater/update.sh 2>/home/pi/updater/logs/cronlog") | crontab -
+echo "Add this to the crontab"
+echo "0 0 * * SAT /home/pi/updater/update.sh &> /home/pi/updater/logs/cronlog"
