@@ -36,7 +36,7 @@ fi
 ##########
 cd ~
 mkdir -p updater/logs
-chmod -R 777 updater
+
 cd updater
 
 #Create the update.sh script
@@ -53,7 +53,7 @@ echo "sudo reboot" >> update.sh
 #Check if motioneye is installed, if so update the package
 if [[ `ps -ef | grep motioneye | grep -v grep` ]]
 then
-    echo "pip install motioneye --upgrade" >> update.sh
+    echo "pip install --upgrade motioneye" >> update.sh
     echo "systemctl restart motioneye" >> update.sh
 fi
 #
