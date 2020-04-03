@@ -59,5 +59,5 @@ fi
 #
 chmod +x update.sh
 
-echo "Add this to the crontab"
-echo "0 0 * * SAT /home/pi/updater/update.sh &> /home/pi/updater/logs/cronlog"
+echo "0 0 * * SAT /home/pi/updater/update.sh &> /home/pi/updater/logs/cronlog" > crontab.out
+echo "To automate the update run: crontab crontab.out"
