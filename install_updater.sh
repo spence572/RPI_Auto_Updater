@@ -45,18 +45,10 @@ touch update.sh
 echo "#!/bin/sh" >> update.sh
 echo "sudo apt-get update && sudo apt-get upgrade -y" >> update.sh
 echo "sudo apt-get -y dist-upgrade" >> update.sh
-echo "sudo rpi-update" >> update.sh
 echo "sudo apt-get autoremove" >> update.sh
 echo "sudo apt-get autoclean" >> update.sh
 echo "sudo reboot" >> update.sh
 
-#Check if motioneye is installed, if so update the package
-if [[ `ps -ef | grep motioneye | grep -v grep` ]]
-then
-    echo "pip install --upgrade motioneye" >> update.sh
-    echo "systemctl restart motioneye" >> update.sh
-fi
-#
 chmod +x update.sh
 
 echo "0 0 * * SAT /home/pi/updater/update.sh &> /home/pi/updater/logs/cronlog" > crontab.out
