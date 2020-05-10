@@ -43,7 +43,7 @@ cd updater
 touch update.sh
 
 echo "#!/bin/sh" >> update.sh
-echo "sudo apt-get update && sudo apt-get upgrade -y" >> update.sh
+echo "sudo apt-get update -y && sudo apt-get upgrade -y" >> update.sh
 echo "sudo apt-get -y dist-upgrade" >> update.sh
 echo "sudo apt-get autoremove" >> update.sh
 echo "sudo apt-get autoclean" >> update.sh
