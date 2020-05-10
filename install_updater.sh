@@ -52,4 +52,4 @@ echo "sudo reboot" >> update.sh
 chmod +x update.sh
 
 echo "0 0 * * SAT /home/pi/updater/update.sh &> /home/pi/updater/logs/cronlog" > crontab.out
-echo "To automate the update run: crontab crontab.out"
+echo "To automate the update run: crontab ~/updater/crontab.out"
